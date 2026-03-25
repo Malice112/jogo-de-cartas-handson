@@ -1,19 +1,10 @@
-﻿namespace JogoDeCartas
+﻿using JogoDeCartas;
+
+namespace JogosDeCartas;
+
+// Record para representar uma carta: imutável e comparada pelo valor dos dados
+public record Carta(string Valor, Naipe Naipe)
 {
-    public class Carta
-    {
-        public string Valor { get; set; }
-        public Naipe Naipe { get; set; }
-
-        public Carta(string valor, Naipe naipe)
-        {
-            Valor = valor;
-            Naipe = naipe;
-        }
-
-        public override string ToString() {
-
-            return $"{Valor} de {Naipe}";
-        }
-    }
+    // Converte o objeto em texto legível, ex: "Ás de Copas"
+    public override string ToString() => $"{Valor} de {Naipe}";
 }
